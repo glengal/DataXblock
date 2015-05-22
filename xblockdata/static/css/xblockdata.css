@@ -1,0 +1,9 @@
+/* CSS for DataBlockXBlock */
+
+.xblockdata_block .count {
+    font-weight: bold;
+}
+
+.xblockdata_block p {
+    cursor: pointer;
+}

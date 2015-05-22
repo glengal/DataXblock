@@ -1,0 +1,12 @@
+xblockdata/__init__.py
+xblockdata/xblockdata.py
+xblockdata/static/README.txt
+xblockdata/static/css/xblockdata.css
+xblockdata/static/html/xblockdata.html
+xblockdata/static/js/src/xblockdata.js
+xblockdata_xblock.egg-info/PKG-INFO
+xblockdata_xblock.egg-info/SOURCES.txt
+xblockdata_xblock.egg-info/dependency_links.txt
+xblockdata_xblock.egg-info/entry_points.txt
+xblockdata_xblock.egg-info/requires.txt
+xblockdata_xblock.egg-info/top_level.txt
