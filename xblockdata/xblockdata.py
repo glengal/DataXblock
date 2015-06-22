@@ -1,9 +1,9 @@
 """TO-DO: Write a description of what this XBlock is."""
 
 import pkg_resources
-
+import csv
 from xblock.core import XBlock
-from xblock.fields import Scope, Integer
+from xblock.fields import Scope, Integer, Dict, String 
 from xblock.fragment import Fragment
 
 
@@ -20,7 +20,13 @@ class DataBlockXBlock(XBlock):
         default=0, scope=Scope.user_state,
         help="A simple counter, to show something happening",
     )
-
+    problem_id = Dict(default="", scope=Scope.content, help="Testing",
+        )
+    files = String(default="", scope=Scope.content)
+    path = r'/home/pylyp/xblock-sdk/script/xblockdata/xblockdata/test.csv'    
+    f = open(path)
+    for row in csv.reader(f):
+        problem_id = row  
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
         data = pkg_resources.resource_string(__name__, path)
@@ -47,10 +53,12 @@ class DataBlockXBlock(XBlock):
         An example handler, which increments the data.
         """
         # Just to show data coming in...
+        #print self.problem_id
         assert data['hello'] == 'world'
+        
 
         self.count += 1
-        return {"count": self.count}
+        return {"count": self.count }
 
     # TO-DO: change this to create the scenarios you'd like to see in the
     # workbench while developing your XBlock.
@@ -60,8 +68,6 @@ class DataBlockXBlock(XBlock):
         return [
             ("DataBlockXBlock",
              """<vertical_demo>
-                <xblockdata/>
-                <xblockdata/>
                 <xblockdata/>
                 </vertical_demo>
              """),
