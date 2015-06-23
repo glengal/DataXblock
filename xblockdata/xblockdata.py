@@ -45,6 +45,19 @@ class DataBlockXBlock(XBlock):
         frag.initialize_js('DataBlockXBlock')
         return frag
 
+    def studio_view(self, context=None):
+        """
+        The primary view of the DataBlockXBlock, shown to students
+        when viewing courses.
+        """
+        html = self.resource_string("static/html/xblockdata.html")
+        frag = Fragment(html.format(self=self))
+        frag.add_css(self.resource_string("static/css/xblockdata.css"))
+        frag.add_javascript(self.resource_string("static/js/src/xblockdata.js"))
+        frag.initialize_js('DataBlockXBlock')
+        return frag
+    
+
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
     @XBlock.json_handler
