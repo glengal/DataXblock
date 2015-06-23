@@ -23,7 +23,7 @@ class DataBlockXBlock(XBlock):
     problem_id = Dict(default="", scope=Scope.content, help="Testing",
         )
     files = String(default="", scope=Scope.content)
-    path = r'test.csv'    
+    path = r'static/test.csv'    
     f = open(path)
     for row in csv.reader(f):
         problem_id = row  
