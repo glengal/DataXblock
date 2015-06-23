@@ -63,5 +63,10 @@ function window_unfocused(eo) {
 
     $(function ($) {
         /* Here's where you'd do things on page load. */
-    });
+         $('ul', '.modal-actions')
+            .append(
+                $('<li>', {class: "action-item"}).append(
+                    $('<a />', {class: "action-primary", id: "chx_submit", text: "Save"})
+                )
+    );
 }
